@@ -18,6 +18,8 @@ if __name__ == '__main__':
     food_list = clean_list(food_list)
     print(food_list)
 
-    Food = Enum({name: index for index, name in enumerate(food_list)})
+    # Instead of creating enum directly from list,
+    # create a dict from the elements with the value being the index
+    Food = Enum('Food', {name: index for index, name in enumerate(food_list)})
 
-    print(Food)
+    
