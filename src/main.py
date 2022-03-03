@@ -1,11 +1,8 @@
 import csv
 from enum import Enum
+# from matplotlib import pyplot as plt
 
 
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 def clean_list(input_list):
     return list(dict.fromkeys(input_list))
 
@@ -20,4 +17,7 @@ if __name__ == '__main__':
                 food_list.append(j.split(";")[0])
     food_list = clean_list(food_list)
     print(food_list)
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
+    Food = Enum({name: index for index, name in enumerate(food_list)})
+
+    print(Food)
